@@ -1,127 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dropsell Shop</title>
-    <!-- raw css link -->
-    <link rel="stylesheet" href="./css/style.css" />
-    <!-- Latest compiled and minified CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
 
-    <!-- google Montserrat  font  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DropSell</title>
 
-  <body>
-    <!-- header part/top part -->
-    <header class="bg-secondary p-4">
-      <h1 class="text-center font-monospace fw-bold">
-        <span id="baba">dropsell</span>
-      </h1>
-      <div class="search-field">
-        <div class="search-box input-group input-group-lg mb-3 container">
-          <input
-            id="input-field"
-            class="search-field form-control mx-auto"
-            placeholder="Search in DropSel"
-            aria-label="product's username"
-            aria-describedby="button-addon2"
-            type="text"
-          />
-          <button
-            type="button"
-            class="btn btn-dark btn-lg"
-            data-toggle="button"
-            aria-pressed="false"
-            autocomplete="off"
-            id="search-btn"
-            onclick="loadProducts()"
-          >
-            Search
-          </button>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!-- google Montserrat  font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- font awosome -->
+  <script src="https://kit.fontawesome.com/0ffd30f08f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header></header>
+  <main class="main">
+    <!-- header -->
+    <h1 class="text-center pt-3 "><strong> DropSell</strong></h1>
+    <div class="input-group mb-3 w-50 mx-auto mt-3">
+      <!-- search input -->
+      <input id="search-input" type="text"  placeholder="product's name..." aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button id="search-btn" class="btn btn-outline-secondary ms-3" type="button" onclick="loadProducts()" id="button-addon2">Search</button>
+    </div>
+    <!-- show details -->
+    <div class="w-50 mx-auto text-center" id="show-details"></div>
+    <div class="row">
+    <!-- all product -->
+      <div class="col-md-9 col-lg-9 col-sm-7">
+        <div id="all-products" class="">
+          
         </div>
       </div>
-    </header>
-    <!--      main part/middle part     -->
-    <main class="main">
-      <div class="row">
-        <div class="col-md-9 col-lg-9 col-sm-7">
-          <div id="details" class="m-3"></div>
-          <div id="all-products" class="">
-            <!-- <h1></h1> -->
-          </div>
-        </div>
-        <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
-          <div class="cart" id="my-cart">
-            <table class="table">
-              <thead>
-                <h1>My-Cart</h1>
-                <tr>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>Total Added-Products:</th>
-                  <td><span id="total-Products">0</span></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th>Price:</th>
-                  <td>$ <span id="price">0</span></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th>Delivery-Charge:</th>
-                  <td>$ <span id="delivery-charge">20</span></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th>Total-Tax:</th>
-                  <td>$ <span id="total-tax">0</span></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">Total</th>
-                  <td colspan="2">$ <span id="total">0</span></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="parces text-center">
-              <button class="btn btn-outline-dark btn-lg text-center">
-                Buy Now
-              </button>
-            </div>
+      <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
+        <div class="cart" id="my-cart">
+          <table class="table">
+            <thead>
+              <h1>My-Cart</h1>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Total Added-Products:</th>
+                <td> <span id="total-Products">0</span></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Price:</th>
+                <td>$ <span id="price">0</span></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Delivery-Charge:</th>
+                <td>$ <span id="delivery-charge">20</span></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Total-Tax:</th>
+                <td>$ <span id="total-tax">0</span></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">Total</th>
+                <td colspan="2">$ <span id="total">0</span></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="parces text-center">
+            <button id="buy-now" class="  btn btn-primary text-center ">Buy Now</button>
           </div>
         </div>
       </div>
-    </main>
-    <!--    footer/last part   -->
-    <footer class="text-center font-monospace fw-bold m-4">
-      &copy 2021 DropSell
-    </footer>
+    </div>
+  </main>
+  <footer></footer>
 
-    <!-- add javascript  file  -->
-    <script src="./js/app.js"></script>
-  </body>
+  <!-- add javascript  file  -->
+  <script src="./js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+
 </html>
